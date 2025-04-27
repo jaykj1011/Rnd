@@ -61,8 +61,8 @@ while True:
             # Get the position (x, y, z) in meters and orientation (in radians)
             x, y, z = tvec[0][0]
           # Apply different scaling for X/Y vs Z if needed
-            x = x * 50
-            y = y * 50
+            x = x / 2
+            y = y / 2
             z = z / 10  
        
             roll, pitch, yaw = rvec[0][0]  # These are in radians
