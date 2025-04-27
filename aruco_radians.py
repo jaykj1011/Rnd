@@ -61,16 +61,16 @@ while True:
             # Get the position (x, y, z) in meters and orientation (in radians)
             x, y, z = tvec[0][0]
           # Apply different scaling for X/Y vs Z if needed
-            x_corrected = x * 100
-            y_corrected = y * 100
-            z_corrected = z / 10  
+            x = x * 100
+            y = y * 100
+            z = z / 10  
        
             roll, pitch, yaw = rvec[0][0]  # These are in radians
 
             # Display the coordinates and orientation
             print(f"Marker ID: {ids[i]}", end = '')
-            print(f" Position (X, Y, Z in m): ({x_corrected:.2f}, {y_corrected:.2f}, {z_corrected:.2f})",end = '')
-            # print(f"Orientation (roll, pitch, yaw in radians): ({roll:.2f}, {pitch:.2f}, {yaw:.2f})",end='\n')
+            print(f" Position (X, Y, Z in m): ({x:.2f}, {y:.2f}, {z:.2f})",end = '')
+            print(f"Orientation (roll, pitch, yaw in radians): ({roll:.2f}, {pitch:.2f}, {yaw:.2f})",end='\n')
             # Draw the axis
             #cv2.aruco.drawAxis(frame, camera_matrix, dist_coeffs, rvec, tvec, 0.1)
     
