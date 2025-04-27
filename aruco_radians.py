@@ -52,7 +52,7 @@ while True:
         
         # Estimate pose for each detected marker
         for i in range(len(ids)):
-            rvec, tvec, _ = cv2.aruco.estimatePoseSingleMarkers(corners[i], 0.07, camera_matrix, dist_coeffs)
+            rvec, tvec, _ = cv2.aruco.estimatePoseSingleMarkers(corners[i], 0.04, camera_matrix, dist_coeffs)
 
             # rvec: rotation vector (3x1), tvec: translation vector (3x1)
             # Convert rotation vector to a rotation matrix
