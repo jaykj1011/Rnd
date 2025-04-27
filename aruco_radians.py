@@ -60,7 +60,11 @@ while True:
 
             # Get the position (x, y, z) in meters and orientation (in radians)
             x, y, z = tvec[0][0]
-       #     z = z/10
+          # Apply different scaling for X/Y vs Z if needed
+            x_corrected = x * 100
+            y_corrected = y * 100
+            z_corrected = z / 10  
+       
             roll, pitch, yaw = rvec[0][0]  # These are in radians
 
             # Display the coordinates and orientation
