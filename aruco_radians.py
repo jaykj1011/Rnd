@@ -69,7 +69,7 @@ while True:
 
             # Display the coordinates and orientation
             print(f"Marker ID: {ids[i]}", end = '')
-            print(f" Position (X, Y, Z in cm): ({x_corrected:.2f}, {y_corrected:.2f}, {z_corrected:.2f})",end = '')
+            print(f" Position (X, Y, Z in m): ({x_corrected:.2f}, {y_corrected:.2f}, {z_corrected:.2f})",end = '')
             # print(f"Orientation (roll, pitch, yaw in radians): ({roll:.2f}, {pitch:.2f}, {yaw:.2f})",end='\n')
             # Draw the axis
             #cv2.aruco.drawAxis(frame, camera_matrix, dist_coeffs, rvec, tvec, 0.1)
