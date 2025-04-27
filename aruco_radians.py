@@ -59,7 +59,7 @@ while True:
             rotation_matrix, _ = cv2.Rodrigues(rvec)
 
             # Get the position (x, y, z) in meters and orientation (in radians)
-            x, y, z = tvec[0][0]/10
+            x, y, z = tvec[0][0]
        #     z = z/10
             roll, pitch, yaw = rvec[0][0]  # These are in radians
 
