@@ -13,10 +13,15 @@ picam2.start()
 
 # Define camera matrix (intrinsic parameters)
 # You can calibrate your camera to get these values (fx, fy, cx, cy)
-# This is an example, you should replace with actual values from your camera calibration
-camera_matrix = np.array([[9810.144958754117,    0.0,                  260.7917835500185],
-                          [0.0,                 6342.787960213781,     289.77752006459065],
-                          [0.0,                    0.0,                   1.0]], dtype="float64")
+# # This is an example, you should replace with actual values from your camera calibration
+# camera_matrix = np.array([[9810.144958754117,    0.0,                  260.7917835500185],
+#                           [0.0,                 6342.787960213781,     289.77752006459065],
+#                           [0.0,                    0.0,                   1.0]], dtype="float64")
+
+# Example of more typical camera matrix values (replace with your actual calibration)
+camera_matrix = np.array([[800, 0, 320],
+                         [0, 800, 240],
+                         [0, 0, 1]], dtype="float64")
 
 # Define distortion coefficients (use camera calibration to get these)
 # dist_coeffs = np.array([0, 0, 0, 0], dtype="float32")  # assuming no distortion for simplicity
