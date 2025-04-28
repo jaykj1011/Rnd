@@ -32,7 +32,8 @@ camera_matrix = np.array([[9810.144958754117,    0.0,                  260.79178
                           [0.0,                    0.0,                   1.0]], dtype="float64")
 
 # Define distortion coefficients (use camera calibration to get these)
-dist_coeffs = np.array([0, 0, 0, 0], dtype="float32")  # assuming no distortion for simplicity
+# dist_coeffs = np.array([0, 0, 0, 0], dtype="float32")  # assuming no distortion for simplicity
+dist_coeffs = np.array([-0.1, 0.01, 0, 0], dtype="float32")  # Example values
 
 # Load the ArUco dictionary and parameters
 aruco_dict = cv2.aruco.Dictionary_get(cv2.aruco.DICT_6X6_250)  # Change this as needed
@@ -144,13 +145,16 @@ while True:
             rotation_matrix, _ = cv2.Rodrigues(rvec)
 
             # Get the position (x, y, z) in meters and orientation (in radians)
-            x, y, z = tvec[0][0]/10
-       #     z = z/10
+            x, y, z = tvec[0][0]
+            # Apply different scaling for X/Y vs Z if needed
+            x = x / 2
+            y = y / 2
+            z = z / 10 
             roll, pitch, yaw = rvec[0][0]  # These are in radians
 
             # Display the coordinates and orientation
             print(f"Marker ID: {ids[i]}", end = '')
-            print(f" Position (X, Y, Z in cm): ({x:.2f}, {y:.2f}, {z:.2f})",end = '')
+            print(f" Position (X, Y, Z in m): ({x:.2f}, {y:.2f}, {z:.2f})",end = '')
             print(f"Orientation (roll, pitch, yaw in radians): ({roll:.2f}, {pitch:.2f}, {yaw:.2f})",end='\n')
             # Draw the axis
             #cv2.aruco.drawAxis(frame, camera_matrix, dist_coeffs, rvec, tvec, 0.1)
