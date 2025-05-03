@@ -25,7 +25,14 @@ camera_matrix = np.array([[9810.144958754117,    0.0,                  260.79178
 
 # Define distortion coefficients (use camera calibration to get these)
 # dist_coeffs = np.array([0, 0, 0, 0], dtype="float32")  # assuming no distortion for simplicity
-dist_coeffs = np.array([-0.1, 0.01, 0, 0], dtype="float32")  # Example values
+# dist_coeffs = np.array([-0.1, 0.01, 0, 0], dtype="float32")  # Example values
+dist_coeffs = np.array([
+    1.4112354063250737e+02,
+   -1.6720309397924852e+05,
+    9.5571290346769255e-02,
+    1.0775492265369080e-01,
+   -2.5502487066255776e+02
+], dtype="float64")
 
 # Load the ArUco dictionary and parameters
 aruco_dict = cv2.aruco.Dictionary_get(cv2.aruco.DICT_6X6_250)  # Change this as needed
